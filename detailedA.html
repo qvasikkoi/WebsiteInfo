@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подробная биография</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .animated-background .circles li {
+            background: #ff0000;
+        }
+        
+
+        .music-player {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+        
+        .music-player:hover {
+            transform: scale(1.1);
+        }
+        
+        .music-icon {
+            color: white;
+            font-size: 24px;
+        }
+        
+        
+        #bgMusic {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <audio id="bgMusic" loop>
+        <source src="Qar.mp3.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио элемент.
+    </audio>
+    
+    
+    <div class="music-player" id="musicButton">
+        <div class="music-icon">♪</div>
+    </div>
+    
+    <div class="animated-background">
+        <ul class="circles">
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+          </ul>         
+    </div>
+    <div class="container">
+        <header>
+            <h1>Подробная биография</h1>
+            <p class="subtitle">Полная информация о моей жизни и карьере</p>
+        </header>
+        
+        <main>
+            <section class="detailed-section">
+                <h2>Ранние годы</h2>
+                <p>Родился в Зайсане в 2009 году. С детства увлекался компьютерами и технологиями. В школе участвовал в олимпиадах по информатике и математике.</p>
+                
+                <h2>Образование</h2>
+                <p>с 2014-2019 учился в лицее имени Абая в Караауле.</p>
+                <p>с 2019-2021 учился в Аксуате.</p>
+                <p>На данный момент учится в Семей БИЛ</p>
+
+                <h2>Достижение</h2>
+                <p>CAFC 2024 Champions award Finalist</p>
+                <p>CAFC 2024 Robot Perfomance award winner</p>
+                <p>CAFC 2024 Best Captain award Finalist</p>
+                <p>CAFC 2025 Best Captain award Finalist</p>
+                <p>CAFC 2025 Community engagement award winner</p>
+                <p>Abay First Championship 2025 Champions award winner</p>
+                <p>Abay First Championship 2025 Robot Perfomance award winner</p>
+                <p>Abay First Championship 2024 Innovation project award winner</p>
+                <p>SDU First Championship 2024 Rising All stars award winner</p>
+                <p>Astana IT university DroneSport Top-20 (record 0:20:03)</p>
+                <p>Abay Regional Hackathon 2nd Place</p>
+                
+                <h2>Навыки</h2>
+                <ul class="skills-list">
+                    <li>HTML5, CSS3</li>
+                    <li>C++</li>
+                    <li>Unity</li>
+                    <li>Figma,Framer</li>
+                    <li>Git</li>
+                    <li>FPV дрон</li>
+                </ul>
+            </section>
+            
+            <div class="back-to-main">
+                <a href="index.html" class="back-btn">← На главную</a>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; Здесь могла быть ваша реклама</p>
+        </footer>
+    </div>
+    
+    <script>
+        const musicButton = document.getElementById('musicButton');
+        const bgMusic = document.getElementById('bgMusic');
+        let isPlaying = false;
+        
+        musicButton.addEventListener('click', function() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicButton.innerHTML = '<div class="music-icon">♪</div>';
+            } else {
+                bgMusic.play();
+                musicButton.innerHTML = '<div class="music-icon">❚❚</div>';
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+</body>
+</html>

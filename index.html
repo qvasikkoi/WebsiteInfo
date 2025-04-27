@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Биография</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .animated-background .circles li {
+            background: #00ffd5;
+        }
+        .scare-button {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            padding: 15px 30px;
+            background-color: #ff0000;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
+            animation: pulse 2s infinite;
+            transition: transform 0.3s;
+        }
+        
+        .scare-button:hover {
+            transform: scale(1.1);
+            background-color: #ff3333;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .scare-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 9999;
+            display: none;
+        }
+        
+        .scare-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .close-scare {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 10000;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button class="scare-button" id="scareButton">НЕ НАЖИМАЙ!</button>
+    <div class="scare-overlay" id="scareOverlay">
+        <video class="scare-video" id="scareVideo" loop>
+            <source src="optim.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео элемент.
+        </video>
+        <div class="close-scare" id="closeScare">✕</div>
+    </div>
+    
+    <div class="animated-background">
+        <ul class="circles">
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+          </ul>         
+    </div>    
+    <div class="container">
+        <header>
+            <h1>Биография</h1>
+            <p class="subtitle">Краткая информация о нас</p>
+        </header>
+        
+        <main>
+            
+            <section class="bio-section">
+                <div class="bio-image">
+                    <img src="A.jpg" alt="Мое фото">
+                </div>
+                <div class="bio-info">
+                    <h2>Моя основная информация</h2>
+                    <p><strong>Имя:</strong> Адилхан Алишер</p>
+                    <p><strong>Дата рождения:</strong> 15 июнь 2009</p>
+                    <p><strong>Место рождения:</strong> Зайсан, ВКО</p>
+                    <p><strong>Профессия:</strong> Ученик 10 класса</p>
+                    <p><strong>Образование:</strong> Семей БИЛ 2021-2026</p>
+                </div>
+            </section>
+            
+            <section class="about-section">
+                <h2>Обо мне</h2>
+                <p>Я финалист CAFC 2024.На данный момент я учусь управлять FPV дроном.</p>
+                <p>Мои основные навыки включают HTML, CSS, С++ и тд. Я люблю решать сложные задачи и постоянно учусь новым технологиям.</p>
+            </section>
+            <div class="next-page">
+                <a href="detailedA.html" class="next-btn">Подробная информация →</a>
+            </div>
+            <section class="qr-section">
+                <div class="qr-codes-container">
+                    <div class="qr-code">
+                        <h3>Мои контакты</h3>
+                        <img src="AQR.png" alt="QR код с моими контактами">
+                        <p>Отсканируйте для связи со мной</p>
+                    </div>
+                </div>
+            </section>
+            <section class="bio-section friend-bio">
+                <div class="bio-image">
+                    <img src="T.png" alt="Фото">
+                </div>
+                <div class="bio-info">
+                    <h2>Моя основная информация</h2>
+                    <p><strong>Имя:</strong> Ануарбек Темірлан</p>
+                    <p><strong>Дата рождения:</strong> 19 август 2009</p>
+                    <p><strong>Место рождения:</strong> Карааул, Абайская область</p>
+                    <p><strong>Профессия:</strong> Ученик 10 класса</p>
+                    <p><strong>Образование:</strong> Семей БИЛ 2021-2026</p>
+                </div>
+            </section>
+            
+            <section class="about-section">
+                <h2>Обо мне</h2>
+                <p>Больше всего я люблю рисовать .В будущем мечтаю стать архитектором</p>
+                <p>Интересный Факт:Я учился с Алишером с 1-4 классах.</p>
+            </section>
+            <div class="next-page">
+                <a href="detailedT.html" class="next-btn">Подробная информация →</a>
+            </div>
+            <section class="qr-section">
+                <div class="qr-codes-container">
+                    <div class="qr-code">
+                        <h3>Контакты</h3>
+                        <img src="TQR.png" alt="QR код">
+                        <p>Отсканируйте для связи со мной</p>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+        
+        <footer>
+            <p>&copy; здесь могла быть ваша реклама</p>
+        </footer>
+    </div>
+    
+    <script>
+        const scareButton = document.getElementById('scareButton');
+        const scareOverlay = document.getElementById('scareOverlay');
+        const scareVideo = document.getElementById('scareVideo');
+        const closeScare = document.getElementById('closeScare');
+        
+        scareButton.addEventListener('click', function() {
+            scareOverlay.style.display = 'block';
+            closeScare.style.display = 'block';
+            
+            scareVideo.play();
+            
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeScare.addEventListener('click', function() {
+            scareOverlay.style.display = 'none';
+            closeScare.style.display = 'none';
+            
+            scareVideo.pause();
+            scareVideo.currentTime = 0;
+            
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+</body>
+</html>

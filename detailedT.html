@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подробная биография</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .animated-background .circles li {
+            background: #6200ff;
+        }
+        .music-player {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+        
+        .music-player:hover {
+            transform: scale(1.1);
+        }
+        
+        .music-icon {
+            color: white;
+            font-size: 24px;
+        }
+        
+        
+        #bgMusic {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <audio id="bgMusic" loop>
+        <source src="oi.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио элемент.
+    </audio>
+    
+    
+    <div class="music-player" id="musicButton">
+        <div class="music-icon">♪</div>
+    </div>
+    <div class="animated-background">
+        <ul class="circles">
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+          </ul>         
+    </div> 
+    <div class="container">
+        <header>
+            <h1>Подробная биография</h1>
+            <p class="subtitle">Полная информация о моей жизни и карьере</p>
+        </header>
+        
+        <main>
+            <section class="detailed-section">
+                <h2>Ранние годы</h2>
+                <p>Родился в Караауле в 2009.С детсво увлекается рисованием и единаборствами(бокс,дзюдо).</p>
+                
+                <h2>Образование</h2>
+                <p>с 2014-2020 учился в лицее имени Абая в Караауле.</p>
+                <p>с 2020-2021 учился в ММГИ имени Абая.</p>
+                <p>На данный момент учится в Семей БИЛ</p>
+
+                <h2>Навыки</h2>
+                <ul class="skills-list">
+                    <li>Рисование</li>
+                    <li>Борьба</li>
+                    <li>Бокс</li>
+                    <li>Концентрация</li>
+                    <li>Коммуникабельность</li>
+                    <li>Стратег</li>
+                    <li>Шахмат 4 разряд</li>
+                    <li>Кулинария</li>
+                </ul>
+            </section>
+            
+            <div class="back-to-main">
+                <a href="index.html" class="back-btn">← На главную</a>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; Здесь могла быть ваша реклама</p>
+        </footer>
+    </div>
+    <script>
+        const musicButton = document.getElementById('musicButton');
+        const bgMusic = document.getElementById('bgMusic');
+        let isPlaying = false;
+        
+        musicButton.addEventListener('click', function() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicButton.innerHTML = '<div class="music-icon">♪</div>';
+            } else {
+                bgMusic.play();
+                musicButton.innerHTML = '<div class="music-icon">❚❚</div>';
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+</body>
+</html>
